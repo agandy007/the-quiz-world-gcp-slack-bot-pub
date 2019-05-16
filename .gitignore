@@ -1,0 +1,5 @@
+.env.yaml
+.git
+
+node_modules
+deploy.sh

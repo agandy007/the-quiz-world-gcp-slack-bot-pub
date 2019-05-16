@@ -1,0 +1,27 @@
+{
+  "name": "the-quizz-world-bot-pubsub",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "lint": "node_modules/.bin/eslint --ext .js --ext .jsx src/",
+    "dev": "nodemon --watch src index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@google-cloud/pubsub": "^0.28.1",
+    "@slack/web-api": "^5.0.1",
+    "debug": "^4.1.1",
+    "express": "^4.16.4",
+    "node-fetch": "^2.5.0"
+  },
+  "devDependencies": {
+    "eslint": "^5.5.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jasmine": "^2.10.1",
+    "nodemon": "^1.18.9"
+  }
+}
