@@ -18,4 +18,4 @@ Add a bot user with the username @gcp_quiz_bot, granted by 1 team member
 ROOT: https://asia-northeast1-the-quizz-world.cloudfunctions.net/slack-bot
 
 Authentication URL:
-`/slack-auth`
+`/slack-oauth`

@@ -5,7 +5,8 @@ ENV=development
 PROJECT_ID=the-quiz-world-dev
 REGION=asia-northeast1
 
-PUB_TOPIC=the-quiz-bot-slack-pub
+PUB_SUB_TOPIC=the-slack-gcp-quiz-bot-${ENV}-pub
+FUNC_NAME=the-slack-gcp-quiz-bot-${ENV}-pub
 
 echo "Deploying to project: ${PROJECT_ID}"
 
@@ -17,8 +18,8 @@ gcloud config set project $PROJECT_ID
 
 gsutil mb -c regional -l $REGION "gs://${BUCKET_NAME}"
 
-gcloud pubsub topics create $PUB_TOPIC
+gcloud pubsub topics create $PUB_SUB_TOPIC
 
-gcloud functions deploy slack-bot-${ENV} --entry-point app --stage-bucket ${BUCKET_NAME} \
+gcloud functions deploy $FUNC_NAME --entry-point app --stage-bucket ${BUCKET_NAME} \
  --runtime nodejs10 --trigger-http --env-vars-file .env.${ENV}.yaml \
  --region $REGION --timeout=$TIMEOUT

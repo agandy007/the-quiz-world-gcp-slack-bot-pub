@@ -4,7 +4,7 @@ const pubsub = new PubSub({
   projectId: process.env.GCLOUD_PROJECT_ID
 });
 
-const TOPIC_NAME = 'the-quiz-bot-slack-pub';
+const TOPIC_NAME = process.env.PUB_SUB_TOPIC;
 
 async function handleEvent(requestBody) {
   if (requestBody.event) {
