@@ -29,7 +29,7 @@ module.exports.OAuthN = async (req, res) => {
 
 module.exports.doInteractive = async (req, res) => {
   try {
-    handleInteractive(req.body);
+    await handleInteractive(req.body);
   } catch (e) {
     console.log('doInteractive:::', e);
   }
@@ -45,7 +45,7 @@ module.exports.doEventSubcription = async (req, res) => {
   }
 
   try {
-    handleEvent(req.body);
+    await handleEvent(req.body);
   } catch (e) {
     console.warn('doEventSubcription:::', e);
   }
