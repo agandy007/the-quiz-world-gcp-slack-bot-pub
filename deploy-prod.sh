@@ -9,11 +9,14 @@ PUB_SUB_TOPIC=the-slack-gcp-quiz-bot-${ENV}-pub
 FUNC_NAME=the-slack-gcp-quiz-bot-${ENV}-pub
 
 BUCKET_NAME=the-quizz-world-cloud-fun-codebase
-REGION=asia-northeast1
+REGION=us-east1
+
 TIMEOUT=300
 VERSION="$(date "+%Y-%m-%d-%H-%M-%S")"
 
 gcloud config set project $PROJECT_ID
+gcloud config set compute/region $REGION
+
 
 gsutil mb -c regional -l $REGION "gs://${BUCKET_NAME}"
 
