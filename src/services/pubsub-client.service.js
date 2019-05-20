@@ -1,7 +1,7 @@
 const { PubSub } = require('@google-cloud/pubsub');
 
 const pubsub = new PubSub({
-  projectId: process.env.GCLOUD_PROJECT_ID
+  projectId: process.env.GCP_PROJECT
 });
 
 const TOPIC_NAME = process.env.PUB_SUB_TOPIC;
