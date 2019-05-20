@@ -46,13 +46,6 @@ async function publishEvent(eventName, payload) {
     .topic(TOPIC_NAME)
     .publish(dataBuffer, customAttributes);
   console.info(`Message ${messageId} published.`);
-
-  // to prevent user click on buttons again.
-  await sleep(500);
-}
-
-function sleep(time) {
-  return new Promise(resolve => setTimeout(resolve, time));
 }
 
 module.exports = {
